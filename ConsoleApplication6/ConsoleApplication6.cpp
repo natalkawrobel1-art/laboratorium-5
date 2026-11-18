@@ -32,6 +32,7 @@ int main() {
 	for (int i = 0; i < (ile_liczb + 2); i++) {
 		cout << tablica_ciag[i] << " "; 
 	}
+	cout << endl; 
 
 	//zadanie 3 
 	int losowa_tablica[10]; 
@@ -83,7 +84,7 @@ int main() {
 	for (int i = 0; i < 10; i++) {
 		suma4 = suma4 + tablica_zad4[i]; 
 	}
-	double srednia4 = suma4 / 10; 
+	double srednia4 = suma4 / ile_elementow; 
 	int minimalna = tablica_zad4[0]; 
 	for (int i = 1; i < 10; i++) {
 		if (tablica_zad4[i] < minimalna) {
@@ -105,8 +106,11 @@ int main() {
 	int tablica_losowanka[10]; 
 	for (int i = 0; i < 10; i++) {
 		tablica_losowanka[i] = (rand() % 10) + 1;
+		cout << tablica_losowanka[i] << " "; 
 	}
+	cout << endl; 
 	int szczesliwy_numerek = (rand() % 10) + 1; 
+	cout << "Szczesliwy numerek to: " << szczesliwy_numerek << endl; 
 	for (int i = 0; i < 10; i++) {
 		if (szczesliwy_numerek == tablica_losowanka[i]) {
 			suma5 = suma5 + 1; 
@@ -125,7 +129,7 @@ int main() {
 	}; 
 	int macierzwynik[2][2]; 
 	for (int i = 0; i < 2; i++) {
-		for (int j = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++) {
 			macierzwynik[i][j] = macierz1[i][j] + macierz2[i][j];
 			cout << macierzwynik[i][j] << " ";
 		} cout << endl; 
