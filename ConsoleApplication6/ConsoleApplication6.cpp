@@ -8,8 +8,8 @@
 using namespace std; 
 
 int main() {
-
-	//zadanie 1 
+	
+	//zadanie 1
 	int tablica_odwracanie_kolejnosci[10];
 	cout << "Podaj 10 liczb calkowitych" << endl;
 	for (int i = 0; i < 10; i++) {
@@ -19,7 +19,7 @@ int main() {
 		cout << tablica_odwracanie_kolejnosci[i] << " ";
 	}cout << endl;
 
-	//zadanie 2 
+	//zadanie 2
 	int ile_liczb;
 	cout << "Ile kolejnych liczb ciagu Fibonacciego chcesz wyznaczyc?" << endl;
 	cin >> ile_liczb;
@@ -34,7 +34,7 @@ int main() {
 	}
 	cout << endl;
 
-	//zadanie 3 
+	//zadanie 3
 	int losowa_tablica[10];
 	int licznik = 0;
 	srand(time(NULL));
@@ -68,7 +68,7 @@ int main() {
 	cout << "Element najmniejszy z tablicy: " << najmniejszy << endl;
 	cout << "Element najwiekszt z tablicy: " << najwiekszy << endl;
 
-	//zadanie 4 
+	//zadanie 4
 	int tablica_zad4[10];
 	int ile_elementow;
 	cout << "Podaj ile elementow tablicy chcesz wypelnic" << endl;
@@ -101,7 +101,7 @@ int main() {
 	cout << "Minimalna wartosc to: " << minimalna << endl;
 	cout << "Maksymalna wartosc to: " << maksymalna << endl;
 
-	//zadanie 5 
+	//zadanie 5
 	int suma5 = 0;
 	int tablica_losowanka[10];
 	for (int i = 0; i < 10; i++) {
@@ -118,7 +118,7 @@ int main() {
 	}
 	cout << "Wylosowana liczba wystepuje w tablicy " << suma5 << "razy" << endl;
 
-	//zadanie 6 
+	//zadanie 6
 	int macierz1[2][2] = {
 		{ 2,4 },
 		{ 1,3 }
@@ -135,7 +135,7 @@ int main() {
 		} cout << endl;
 	}
 
-	//zadanie 7 
+	//zadanie 7
 	int macierz_1[2][2] = {
 			{ 2,4 },
 			{ 1,3 }
@@ -152,7 +152,7 @@ int main() {
 		} cout << endl;
 	}
 
-	//zadanie 8 
+	//zadanie 8
 	int macierz_8[3][3];
 	cout << "Podaj 9 liczb do macierzy kwadratowej" << endl;
 	for (int i = 0; i < 3; i++) {
@@ -181,9 +181,9 @@ int main() {
 	for (int i = 0; i < 10; i++) {
 		cout << tablica_sort[i] << " ";
 	}
-	cout << endl; 
+	cout << endl;
 
-	//zadanie 10 
+	//zadanie 10
 	int macierz_10[8][8] = {
 		{ 1,2,3,4,5,6,7,8 },
 		{ 2,3,4,5,9,2,6,9 },
@@ -208,5 +208,95 @@ int main() {
 		}
 		cout << "Suma kolumny " << i << "=" << suma_kolumny << endl;
 	}
-	return 0;
+	
+	//zadanie 11
+
+	int macierz_11[8][6] = {
+		{ 12,4,56,18,19,96 },
+		{ 75,98,64,8,93,43 },
+		{ 23,65,4,91,89,48 },
+		{ 56,85,1,99,34,89 },
+		{ 23,86,45,90,2,98 },
+		{ 12,54,37,5,98,22 },
+		{ 45,89,76,42,18,0 },
+		{ 34,26,98,55,21,4 }
+	};
+	int najmniejszy11 = macierz_11[0][0];
+	int najwiekszy11 = macierz_11[0][0];
+	int temp_wiersz_1 = 0;
+	int temp_kolumna_1 = 0;
+	int temp_wiersz_2 = 0;
+	int temp_kolumna_2 = 0;
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 6; j++) {
+			if (macierz_11[i][j] < najmniejszy11) {
+				najmniejszy11 = macierz_11[i][j];
+				temp_wiersz_1 = i;
+				temp_kolumna_1 = j;
+			}
+			if (macierz_11[i][j] > najwiekszy11) {
+				najwiekszy11 = macierz_11[i][j];
+				temp_wiersz_2 = i;
+				temp_kolumna_2 = j;
+			}
+		}
+	} cout << "Najmniejszy element to: " << najmniejszy11 << " i znajduje sie w " << temp_wiersz_1 << " wierszu i " << temp_kolumna_1 << " kolumnie" << endl;
+	cout << "Najwiekszy element to: " << najwiekszy11 << " i znajduje sie w " << temp_wiersz_2 << " wierszu i " << temp_kolumna_2 << " kolumnie" << endl;
+
+	//zadanie 12 
+	int macierz_12[6][6]{
+		{ 1,2,3,9,8,7 },
+		{ 5,9,6,1,0,8 },
+		{ 2,7,9,9,5,0 },
+		{ 3,4,5,6,7,2 },
+		{ 5,8,9,3,2,1 },
+		{ 2,7,4,9,7,8 }
+	};
+	int suma2 = 0;
+	for (int i = 0; i < 6; i++) {
+		suma2 = suma2 + macierz_12[i][5 - i];
+	} cout << "Suma drugiej przekatnej macierzy to: " << suma2 << endl;
+
+
+	//zadanie 13
+	int blad = 0;
+	int macierz_13[5][5]{
+		{ 1,2,3,4,5 },
+		{ 2,6,7,8,9 },
+		{ 3,7,0,1,2 },
+		{ 4,8,1,3,4 },
+		{ 5,9,2,4,5 }
+	}; for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			if (macierz_13[i][j] != macierz_13[j][i]) {
+				blad = blad + 1;
+			}
+		}
+	}
+	if (blad == 0) {
+		cout << "Macierz jest symetryczna" << endl;
+	}
+	else {
+		cout << "Macierz nie jest symetryczna" << endl;
+	}
+
+
+	//zadanie 14
+	double k = 2.2;
+	int macierz_14[6][6]{
+		{ 1,2,3,9,8,7 },
+		{ 5,9,6,1,0,8 },
+		{ 2,7,9,9,5,0 },
+		{ 3,4,5,6,7,2 },
+		{ 5,8,9,3,2,1 },
+		{ 2,7,4,9,7,8 }
+	};
+	double macierz_mnozenie[6][6];
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 6; j++) {
+			macierz_mnozenie[i][j] = macierz_14[i][j] * k;
+			cout << macierz_mnozenie[i][j] << "\t";
+		} cout << endl; 
+	}
 }
+	
