@@ -208,7 +208,7 @@ int main() {
 		}
 		cout << "Suma kolumny " << i << "=" << suma_kolumny << endl;
 	}
-	
+
 	//zadanie 11
 
 	int macierz_11[8][6] = {
@@ -243,7 +243,7 @@ int main() {
 	} cout << "Najmniejszy element to: " << najmniejszy11 << " i znajduje sie w " << temp_wiersz_1 << " wierszu i " << temp_kolumna_1 << " kolumnie" << endl;
 	cout << "Najwiekszy element to: " << najwiekszy11 << " i znajduje sie w " << temp_wiersz_2 << " wierszu i " << temp_kolumna_2 << " kolumnie" << endl;
 
-	//zadanie 12 
+	//zadanie 12
 	int macierz_12[6][6]{
 		{ 1,2,3,9,8,7 },
 		{ 5,9,6,1,0,8 },
@@ -296,7 +296,106 @@ int main() {
 		for (int j = 0; j < 6; j++) {
 			macierz_mnozenie[i][j] = macierz_14[i][j] * k;
 			cout << macierz_mnozenie[i][j] << "\t";
-		} cout << endl; 
+		} cout << endl;
 	}
-}
 	
+	//zadanie 15 
+	int szukana;
+	int licznik_szukanej = 0;
+	int macierz_15[8][4] = {
+		{ 1, 2, 3, 4 },
+		{ 5,  6,  7,  8 },
+		{ 9, 10, 11, 12 },
+		{ 13, 14, 15, 16 },
+		{ 17, 18, 19, 20 },
+		{ 21, 22, 23, 24 },
+		{ 25, 26, 27, 28 },
+		{ 29, 30, 31, 32 }
+	}; cout << "Podaj liczbe ktorej chcesz szukac w macierzy" << endl;
+	cin >> szukana;
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (macierz_15[i][j] == szukana) {
+				cout << "Szuakana liczba wystepuje w tablicy w wierszu " << i << " i kolumnie " << j << endl;
+				licznik_szukanej = licznik_szukanej + 1;
+			}
+		}
+	} cout << "Szukana wartosc wystepuje w macierzy " << licznik_szukanej << " razy" << endl;
+
+	//zadanie 16 
+	int spr = 0;
+	int macierz_jednostkowa[5][5] = {
+		{ 1, 0, 0, 0, 0 },
+		{ 0, 1, 0, 0, 0 },
+		{ 0, 0, 1, 0, 0 },
+		{ 0, 0, 0, 1, 0 },
+		{ 0, 0, 0, 0, 1 }
+	};
+	for (int i = 0; i < 5; i++) {
+		if (macierz_jednostkowa[i][i] == 1) {
+			for (int j = 0; j < 5; j++) {
+				if (j != i) {
+					if (macierz_jednostkowa[i][j] == 0) {
+						spr = spr;
+					}
+					else {
+						spr = spr + 1;
+					}
+				}
+			}
+		}
+		else {
+			spr = spr + 1;
+		}
+	} if (spr == 0) {
+		cout << "Macierz jest jednostkowa" << endl;
+	}
+	else {
+		cout << "Macierz nie jest jednostkowa" << endl;
+	}
+	//zadanie 17 (nr kolumny i wiersza wyswietla sie od 1) 
+	int max_suma;
+	int max_sumak;
+	int macierz_17[8][6];
+	int tempw = 0;
+	cout << "Podaj elementy macierzy" << endl;
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 6; j++) {
+			cin >> macierz_17[i][j];
+		}
+	} for (int i = 0; i < 8; i++) {
+		int suma_wierszaa = 0;
+		for (int j = 0;j < 6; j++) {
+			suma_wierszaa = suma_wierszaa + macierz_17[i][j];
+		}
+		if (i == 0) {
+			max_suma = suma_wierszaa;
+			tempw = i + 1;
+		}
+		else {
+			if (suma_wierszaa > max_suma) {
+				max_suma = suma_wierszaa;
+				tempw = i + 1;
+			}
+		}
+	}
+	int tempk = 0;
+	for (int j = 0; j < 6; j++) {
+		int suma_kolumnyy = 0;
+		for (int i = 0; i < 8; i++) {
+			suma_kolumnyy = suma_kolumnyy + macierz_17[i][j];
+		}
+		if (j == 0) {
+			max_sumak = suma_kolumnyy;
+			tempk = j + 1;
+		}
+		else {
+			if (suma_kolumnyy > max_sumak) {
+				max_sumak = suma_kolumnyy;
+				tempk = j + 1;
+			}
+		}
+	}
+	return 0;
+}
+
